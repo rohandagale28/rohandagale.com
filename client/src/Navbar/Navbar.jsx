@@ -1,7 +1,6 @@
 import React from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import CancelIcon from '@mui/icons-material/Cancel';
 import Navigation from './Navigation';
 import { NavLink } from 'react-router-dom';
 
@@ -10,9 +9,6 @@ const Navbar = () => {
 
   const handleClick = () => {
     setDrawer(!drawer)
-    // if (navigator.vibrate) {
-    //   navigator.vibrate(50);
-    // }
   }
 
   return (
@@ -30,9 +26,6 @@ const Navbar = () => {
           <>
             <div className="drawer" onClick={handleClick}>
               <Navigation />
-            </div>
-            <div className='navbar-option' onClick={handleClick}>
-              <CancelIcon />
             </div>
           </>
         ) : (

@@ -5,7 +5,7 @@ const url = import.meta.env.VITE_BASE_URL
 export const getProject = async () => {
     try {
         const res = await axios.get(`${url}/project`)
-        return res.data
+        return res
     } catch (err) {
         return err
     }
