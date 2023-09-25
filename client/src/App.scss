@@ -1,0 +1,553 @@
+//==========|| variable declaration ||==========//
+$color: #e5e5e5cc;
+$backgroundColor: #000000;
+$backgroundColorDark: #000000;
+$apple: "San Francisco", Helvetica, Arial, sans-serif;
+$vercel: "__Inter_e66fe9", "__Inter_Fallback_e66fe9";
+$blue: #3291ff;
+$gray: #999999;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $apple;
+  text-decoration: none;
+
+  a {
+    text-decoration: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsla(2, 0%, 0%, 1);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(69, 69, 69, 0.6);
+    border-radius: 4rem;
+
+    &:hover {
+      background-color: rgba(69, 69, 69, 1);
+    }
+  }
+}
+
+//==========|| media queries ||==========//
+@mixin sm {
+  @media screen and (max-width: 390px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: 390px) and (max-width: 786px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 787px) and (max-width: 1294px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: 1295px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+//==========|| flex box ||==========//
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+//==========|| navbar ||==========//
+.navbar {
+  @include flex-row;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  background: rgba(14, 14, 14, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 2px solid #69696910;
+
+  .navigation {
+    @include flex-row;
+    gap: 3rem;
+
+    .navlink {
+      text-decoration: none;
+      color: #e5e5e5;
+      font-size: 0.95rem;
+      text-transform: capitalize;
+      transition: 0.2s;
+
+      &.active {
+        color: $blue;
+        transition: 0.2s;
+      }
+    }
+
+    @include sm {
+      display: none;
+    }
+    @include md {
+      display: none;
+    }
+  }
+
+  .navbar-option {
+    color: $color;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include lg {
+      display: none;
+    }
+    @include xl {
+      display: none;
+    }
+  }
+
+  .navbar-github {
+    color: $color;
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .drawer {
+    position: absolute;
+    top: 4.4rem;
+    right: 20px;
+    background: rgba(28, 28, 28, 1);
+    backdrop-filter: blur(10px);
+    height: 18rem;
+    width: 46%;
+    border-radius: 16px;
+    @include flex-col;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    animation: drawer-slider 0.5s;
+
+    .navlink {
+      text-decoration: none;
+      color: #e5e5e5;
+      font-size: 0.95rem;
+      text-transform: capitalize;
+      transition: 0.2s;
+
+      &.active {
+        color: $blue;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  @keyframes drawer-slider {
+    0% {
+      transform: translateX(150%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+//==========|| home page ||==========//
+.home {
+  height: auto;
+  width: 100%;
+  color: $color;
+  box-sizing: border-box;
+
+  .section-1 {
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 40vh;
+    padding-left: 5rem;
+    @include flex-col;
+    justify-content: flex-start;
+
+    @include sm {
+      padding-left: 2rem;
+      padding-top: 30vh;
+    }
+
+    .intro {
+      font-size: 1.8rem;
+
+      @include sm {
+        font-size: 1.4rem;
+      }
+    }
+
+    .title {
+      padding-top: 0.6rem;
+      font-size: 1.2rem;
+
+      @include sm {
+        font-size: 1.1rem;
+      }
+    }
+
+    .description {
+      padding-top: 1rem;
+      width: 40%;
+      line-height: 1.4em;
+      word-spacing: 0.1rem;
+      color: $gray;
+
+      @include sm {
+        width: 80%;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .section-2 {
+    position: absolute;
+    @include flex-row;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $backgroundColor;
+    color: "#e5e5e5";
+    top: 0px;
+    left: 0px;
+    gap: 1rem;
+    z-index: -1;
+    padding: 0rem 2rem;
+    box-sizing: border-box;
+
+    @keyframes scroll {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    .scrollable {
+      color: #999999;
+      @include flex-row;
+      flex-wrap: wrap;
+      white-space: nowrap;
+      gap: 8rem;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      animation: scroll 450s linear infinite;
+
+      @include sm {
+        gap: 6rem;
+        animation: scroll 800s linear infinite;
+      }
+
+      .dot {
+        font-size: 2rem;
+        height: 4px;
+        width: 4px;
+        border-radius: 1rem;
+        background-color: #69696980;
+      }
+    }
+  }
+}
+
+//==========|| project page ||==========//
+.project {
+  height: auto;
+  width: 100%;
+  background-color: $backgroundColor;
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 26vh;
+  padding-bottom: 60vh;
+  column-gap: 2rem;
+  row-gap: 4rem;
+  color: $color;
+
+  .Link-to {
+    @include flex-row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $color;
+  }
+
+  @include sm {
+    row-gap: 2rem;
+    column-gap: 0rem;
+    padding-top: 16vh;
+  }
+
+  .card {
+    height: auto;
+    min-height: 60px;
+    width: 460px;
+    border-radius: 16px;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    @include flex-col;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+
+    @include sm {
+      width: 90%;
+      padding: 1rem 1.4rem;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      width: 100%;
+      @include flex-row;
+      justify-content: space-between;
+
+      .image-container {
+        padding-left: 2rem;
+        @include flex-row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+
+        .image {
+          height: auto;
+          width: 22px;
+
+          @include sm {
+            width: 18px;
+          }
+        }
+      }
+
+      @include sm {
+        font-size: 1rem;
+      }
+    }
+
+    .description {
+      color: $gray;
+      font-size: 0.9rem;
+      line-height: 1rem;
+
+      @include sm {
+        font-size: 0.8rem;
+      }
+    }
+
+    &:hover {
+      outline: 2px solid #69696920;
+      background-color: #282828;
+    }
+  }
+}
+
+//==========|| footer ||==========//
+.footer {
+  @include flex-col;
+  justify-content: center;
+  align-items: center;
+  background: rgba(14, 14, 14, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: fixed;
+  height: 2.8rem;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  border-top: 1px solid #69696910;
+
+  .section-1 {
+    ul {
+      @include flex-row;
+      text-decoration: none;
+      list-style-type: none;
+      gap: 1.4rem;
+
+      a {
+        color: $color;
+      }
+    }
+  }
+  .copyright {
+    font-size: 0.8rem;
+  }
+}
+
+//==========|| stack page ||==========//
+.stack {
+  @include flex-row;
+  height: auto;
+  width: 100%;
+  background-color: $backgroundColor;
+  padding-top: 28vh;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  column-gap: 1rem;
+  row-gap: 1.6rem;
+  flex-wrap: wrap;
+  padding-bottom: 60vh;
+
+  a {
+    color: $color;
+  }
+
+  @include sm {
+    column-gap: 0.5rem;
+    row-gap: 1.2rem;
+    padding-top: 24vh;
+    padding-bottom: 20vh;
+  }
+
+  .title {
+    position: absolute;
+    top: 6.4rem;
+    text-align: center;
+    color: $gray;
+    line-height: 1.4rem;
+    font-size: 1.2rem;
+
+    @include sm {
+      font-size: 1rem;
+    }
+  }
+
+  .card {
+    @include flex-row;
+    width: 260px;
+    height: 70px;
+    border-radius: 12px;
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+    @include sm {
+      width: 170px;
+      height: 60px;
+    }
+
+    &:hover {
+      outline: 2px solid #28282840;
+      background-color: #282828;
+    }
+
+    .image {
+      height: auto;
+      width: 28px;
+
+      @include sm {
+        width: 22px;
+      }
+    }
+
+    .left {
+      padding-left: 16px;
+      @include sm {
+        padding-left: 12px;
+      }
+    }
+
+    .right {
+      @include flex-col;
+      gap: 4px;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: 1rem;
+
+      @include sm {
+        padding-left: 12px;
+        padding-right: 4px;
+      }
+      :nth-child(1) {
+        font-size: 1rem;
+        text-transform: capitalize;
+
+        @include sm {
+          font-size: 0.9rem;
+          text-transform: capitalize;
+        }
+      }
+      :nth-child(2) {
+        font-size: 0.9rem;
+        color: $gray;
+        text-transform: lowercase;
+
+        @include lg {
+          font-size: 0.9rem;
+          text-transform: lowercase;
+        }
+        @include sm {
+          font-size: 0.7rem;
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+}
+
+//Loader
+.loader-container {
+  height: 40vh;
+  width: 100%;
+  background-color: $backgroundColor;
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
+
+  .loader {
+    color: "#e5e5e5";
+    border: 6px solid #d9d9d9;
+    border-radius: 50%;
+    border-top: 6px solid $blue;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
