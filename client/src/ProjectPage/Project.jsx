@@ -20,7 +20,7 @@ const Project = () => {
                         {project && project.map((item) => {
                             return (
                                 <React.Fragment key={item._id}>
-                                    <Card title={item.title} description={item.description} icons={item.icons} />
+                                    <Card title={item.title} description={item.description} icons={item.icons} link={item.link}/>
                                 </React.Fragment>
                             )
                         })}

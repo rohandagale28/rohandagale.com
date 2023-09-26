@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 
 const Card = (props) => {
 
     return (
         <>
-            <Link to={props?.link} target='_blank' className='Link-to'>
+            <a href={props?.link} target='_blank' className='Link-to'>
                 <div className="card">
                     <div className="title">
                         <div>
@@ -25,7 +24,7 @@ const Card = (props) => {
                         {props.description.length > 250 ? props?.description.slice(0, 250) + "..." : props?.description}
                     </div>
                 </div >
-            </Link>
+            </a>
         </>
     )
 }
