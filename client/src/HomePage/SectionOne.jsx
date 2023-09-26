@@ -14,6 +14,9 @@ const SectionOne = () => {
                     Proficient in a wide range of technologies, I seamlessly bridge the gap between front-end and back-end development. With
                     a track record of delivering innovative projects, I thrive on solving complex challenges to create exceptional user experiences</p>
             </div>
+            <div className="discord-button">
+                <button className="button"> <a href="https://discord.gg/hw37ZUEa" target='_blank'>Join Discord</a></button>
+            </div>
         </>
     )
 }
