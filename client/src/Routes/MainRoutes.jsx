@@ -2,6 +2,7 @@ import { useRoutes } from "react-router-dom";
 import { Home } from "../HomePage/Home";
 import { lazy } from "react";
 import Error from "../Error/Error";
+import Connect from "../ConnectPage/Connect";
 
 
 //===========|| lazy loading ||===========//
@@ -23,6 +24,10 @@ export default function AppRoutes() {
         {
             path: "/stack",
             element: <Stack />,
+        },
+        {
+            path: "/connect",
+            element: <Connect />,
         },
         {
             path: "*",

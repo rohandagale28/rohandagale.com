@@ -15,7 +15,7 @@ const SectionOne = () => {
                     a track record of delivering innovative projects, I thrive on solving complex challenges to create exceptional user experiences</p>
             </div>
             <div className="discord-button">
-                <button className="button"> <a href="https://discord.gg/hw37ZUEa" target='_blank'>Join Discord</a></button>
+                <a href="https://discord.gg/hw37ZUEa" target='_blank'> <button className="button"> Join Discord</button></a>
             </div>
         </>
     )
