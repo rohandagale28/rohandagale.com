@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SectionOne = () => {
     return (
         <>
@@ -15,7 +13,7 @@ const SectionOne = () => {
                     a track record of delivering innovative projects, I thrive on solving complex challenges to create exceptional user experiences</p>
             </div>
             <div className="discord-button">
-                <a href="https://discord.gg/hw37ZUEa" target='_blank'> <button className="button"> Join Discord</button></a>
+                <a href="https://discord.gg/hw37ZUEa" target='_blank' rel='noreferrer'> <button className="button"> Join Discord</button></a>
             </div>
         </>
     )

@@ -21,7 +21,7 @@ const Connect = () => {
             </div>
           </div>
         </a>
-        <a href="mailto:workspacex28@gmail.com">
+        <a href="https://discord.gg/et3h7BczrH">
           <div className="information">
             <div className="first">
               <div>

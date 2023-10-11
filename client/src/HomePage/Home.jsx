@@ -21,7 +21,7 @@ export const Home = () => {
                             )
                         })}
                     </div>
-                    <div className="overlap"></div>
+                    {/* <div className="overlap"></div> */}
                 </div>
             </div>
         </React.Fragment>

@@ -244,27 +244,17 @@ $gray: #999999;
       transform: translateX(0%);
     }
   }
-
-  @keyframes drawer-slider-close {
-    100% {
-      transform: translateX(150%);
-    }
-
-    0% {
-      transform: translateX(0%);
-    }
-  }
 }
 
 //==========|| home page ||==========//
 .home {
-  height: auto;
+  height: 100dvh;
   width: 100%;
   color: $color;
   box-sizing: border-box;
 
   .section-1 {
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     box-sizing: border-box;
     padding-top: 40vh;
@@ -434,6 +424,7 @@ $gray: #999999;
   column-gap: 2rem;
   row-gap: 4rem;
   color: $color;
+  box-sizing: border-box;
 
   .Link-to {
     @include flex-row;
@@ -448,6 +439,13 @@ $gray: #999999;
     column-gap: 0rem;
     padding-top: 16vh;
   }
+
+  @include md {
+    row-gap: 2rem;
+    column-gap: 0rem;
+    padding-top: 16vh;
+  }
+
 
   .card {
     height: auto;
