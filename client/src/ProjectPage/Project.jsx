@@ -13,6 +13,7 @@ const Project = () => {
     return (
         <React.Fragment>
             <div className="project">
+                <div className='title-header'>Recent Projects</div>
                 {loading === true ? <>
                     <Skeleton />
                 </> :
@@ -20,7 +21,7 @@ const Project = () => {
                         {project && project.map((item) => {
                             return (
                                 <React.Fragment key={item._id}>
-                                    <Card title={item.title} description={item.description} icons={item.icons} link={item.link}/>
+                                    <Card title={item.title} description={item.description} icons={item.icons} link={item.link} />
                                 </React.Fragment>
                             )
                         })}

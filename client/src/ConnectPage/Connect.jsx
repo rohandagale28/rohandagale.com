@@ -6,7 +6,7 @@ const Connect = () => {
   return (
     <>
       <div className="contact">
-        <div className="title">connect with me</div>
+        <div className="title">Connect With Me</div>
         <a href="mailto:workspacex28@gmail.com">
           <div className="information">
             <div className="first">
